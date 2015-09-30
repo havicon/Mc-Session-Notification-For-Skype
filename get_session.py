@@ -32,7 +32,7 @@ while True:
         join_name = "{0}".format(", ".join(list_join))
         player_online = "{0}".format(status.players.online)
 
-        join_msg = commands.getoutput("python join_message.py " + join_name + " " + player_online)
+        join_msg = commands.getoutput("python send_message.py " + join_name + " " + player_online + " 1")
 	print(join_msg)
 
     if len(list_left) == 0:
@@ -41,6 +41,5 @@ while True:
         left_name = "{0}".format(", ".join(list_left))
         player_online = "{0}".format(status.players.online)
 
-        left_msg = commands.getoutput("python left_message.py " + left_name + " " + player_online)
+        left_msg = commands.getoutput("python send_message.py " + left_name + " " + player_online + " 2")
         print(left_msg)
-
