@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import Skype4Py
 
-class sndmsg:
+class SndMsg:
     def snd_s(msg): #skype送信
 
         skype = Skype4Py.Skype(Transport='x11')
@@ -12,4 +12,3 @@ class sndmsg:
                 chat.SendMessage(msg)
 
     def snd_t(msg):
-        
