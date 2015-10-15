@@ -4,6 +4,7 @@ import commands
 import time
 from mcstatus import MinecraftServer
 
+class
 while True:
     #状態取得
     server = MinecraftServer.lookup("10.240.222.48:2525")
@@ -26,20 +27,33 @@ while True:
     list_def = list_much
 
     #ログインアウトされたか判断
-    if len(list_join) == 0:
+    if len(list_join) == 0: #ログイン通知処理
         pass
     else:
         join_name = "{0}".format(", ".join(list_join))
         player_online = "{0}".format(status.players.online)
 
-        join_msg = commands.getoutput("python send_message.py " + join_name + " " + player_online + " 1")
+        if player_online == 0:
+            online_player = u"#現在オンラインのニート無し"
+        else:
+            online_player = u"#現在" + player_online + u"ニートがオンライン"
+
+        msg = u"【Minecraft】\n" + join_name + u"さんがログインしました \n" + online_player
+
+        sndmsg.snd_s(msg)
 	print(join_msg)
 
-    if len(list_left) == 0:
+    if len(list_left) == 0: #ログアウト通知処理
         pass
     else:
         left_name = "{0}".format(", ".join(list_left))
         player_online = "{0}".format(status.players.online)
 
-        left_msg = commands.getoutput("python send_message.py " + left_name + " " + player_online + " 2")
-        print(left_msg)
+        if player_online == 0:
+            online_player = u"#現在オンラインのニート無し"
+        else:
+            online_player = u"#現在" + player_online + u"ニートがオンライン"
+
+        msg = u"【Minecraft】\n" + left_name + u"さんがログアウトしました \n" + online_player
+
+        sndmsg.snd_s(msg)

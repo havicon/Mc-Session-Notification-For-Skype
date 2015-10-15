@@ -32,7 +32,7 @@ def handler(msg, event):
 
         elif msg.Body == u"応答せよ":
             msg.Chat.SendMessage(u"呼んだか？")
-        
+
         elif msg.Body == u"好きです":
             msg.Chat.SendMessage(u"ごめんなさい")
 
@@ -81,7 +81,7 @@ def handler(msg, event):
             応答せよ         : Bot生存確認
             """
             msg.Chat.SendMessage(helpmsg)
-            
+
 
 def main():
     skype = Skype4Py.Skype(Transport='x11')
